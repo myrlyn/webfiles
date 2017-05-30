@@ -11,7 +11,7 @@ import javax.ws.rs.core.MediaType;
  *
  */
 //appended to /webfiles/api/hello
-@Path("/hello")
+@Path("/")
 public class webfiles {
 
 	/**
@@ -20,7 +20,7 @@ public class webfiles {
 	public webfiles() {
 		// TODO Auto-generated constructor stub
 	}
-	 @GET
+	  @GET
 	  @Produces(MediaType.TEXT_PLAIN)
 	  public String sayPlainTextHello() {
 	    return "Hello Jersey";
@@ -40,6 +40,11 @@ public class webfiles {
 	    return "<html> " + "<title>" + "Hello Jersey" + "</title>"
 	        + "<body><h1>" + "Hello Jersey" + "</body></h1>" + "</html> ";
 	  }
-
+	  @POST
+	  @Produces(MediaType.APPLICATION_JSON)
+	  @Path("/test")
+	  public String test(){
+		  return ("{}");
+	  }
 
 }
